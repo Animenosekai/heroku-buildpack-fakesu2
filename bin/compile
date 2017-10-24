@@ -52,7 +52,7 @@ echo "debootstrap installed" | indent
 
 echo "-----> Fetching, installing and vendoring fakechroot into /app/.tools/fakechroot/"
 cd $FAKECHROOT_BUILD
-git clone git://github.com/fabiokung/fakechroot.git
+git clone git://github.com/dex4er/fakechroot.git
 cd fakechroot
 ./autogen.sh 2>&1
 ./configure --prefix=$BUILD_DIR/.tools/fakechroot
@@ -61,7 +61,7 @@ make install
 echo "fakechroot vendored" | indent
 
 cd $BUILDPACK_DIR
-echo "-----> Bootstraping a new base ubuntu lucid into /app/.root/"
+echo "-----> Bootstraping a new base ubuntu xenial into /app/.root/"
 mkdir -p $BUILD_DIR/.root
 fakechroot -s fakeroot debootstrap --no-check-gpg --variant=fakechroot xenial $BUILD_DIR/.root
 fakechroot fakeroot chroot $BUILD_DIR/.root apt-get install -y --force-yes gpgv 2>&1
