@@ -52,7 +52,7 @@ echo "debootstrap installed" | indent
 
 echo "-----> Fetching, installing and vendoring fakechroot into /app/.tools/fakechroot/"
 cd $FAKECHROOT_BUILD
-git clone git://github.com/dex4er/fakechroot.git
+git clone git://github.com/EnumC/fakechroot.git
 cd fakechroot
 ./autogen.sh 2>&1
 ./configure --prefix=$BUILD_DIR/.tools/fakechroot
